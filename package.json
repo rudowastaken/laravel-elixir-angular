@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-angular",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Laravel Elixir AngularJS Extension",
   "main": "index.js",
   "scripts": {
