@@ -40,7 +40,7 @@ elixir.extend('angular', function(src, output, outputFilename) {
             .pipe(gulp.dest(output || config.jsOutput))
             .pipe(notify({
                 title: 'Laravel Elixir',
-                subtitle: 'Angluar Compiled!',
+                subtitle: 'Angular Compiled!',
                 icon: __dirname + '/../laravel-elixir/icons/laravel.png',
                 message: ' '
             }));
