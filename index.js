@@ -15,7 +15,7 @@ elixir.extend('angular', function(src, output, outputFilename) {
 
     var baseDir = src || config.assetsDir + 'angular/';
 
-    gulp.task('angular', function() {
+    gulp.task('angular in ' + baseDir, function() {
         var onError = function(err) {
             notify.onError({
                 title:    "Laravel Elixir",
@@ -46,8 +46,8 @@ elixir.extend('angular', function(src, output, outputFilename) {
             }));
     });
 
-    this.registerWatcher('angular', baseDir + '/**/*.js');
+    this.registerWatcher('angular in ' + baseDir, baseDir + '/**/*.js');
 
-    return this.queueTask('angular');
+    return this.queueTask('angular in ' + baseDir);
 
 });
