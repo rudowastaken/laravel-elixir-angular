@@ -7,15 +7,16 @@ var uglify = require('gulp-uglify');
 var ngAnnotate = require('gulp-ng-annotate');
 var notify = require('gulp-notify');
 var gulpif = require('gulp-if');
-var elixir = require('laravel-elixir');
 
-elixir.extend('angular', function(src, output, outputFilename) {
+var Elixir = require('laravel-elixir');
 
-    var config = this;
+var Task = Elixir.Task;
 
-    var baseDir = src || config.assetsDir + 'angular/';
+Elixir.extend('angular', function(src, output, outputFilename) {
 
-    gulp.task('angular in ' + baseDir, function() {
+    var baseDir = src || Elixir.config.assetsPath + '/angular/';
+
+    new Task('angular in ' + baseDir, function() {
         var onError = function(err) {
             notify.onError({
                 title:    "Laravel Elixir",
@@ -44,10 +45,6 @@ elixir.extend('angular', function(src, output, outputFilename) {
                 icon: __dirname + '/../laravel-elixir/icons/laravel.png',
                 message: ' '
             }));
-    });
-
-    this.registerWatcher('angular in ' + baseDir, baseDir + '/**/*.js');
-
-    return this.queueTask('angular in ' + baseDir);
+    }).watch(baseDir + '/**/*.js');
 
 });
