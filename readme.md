@@ -1,3 +1,6 @@
+# [DEPRECATED] 
+I would personally recommend to use Browserify or Webpack. It scales much better and it's not forcing any paricular structure to your code.
+
 ## Usage
 
 This is a simple wrapper around Laravel Elixir. Add it to your Elixir-enhanced Gulpfile, like so:
